@@ -1,7 +1,6 @@
 from scipy.io import loadmat
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
@@ -30,7 +29,7 @@ plt.show()
 
 #training the linear SVM
 X_train, X_test, y_train, y_test = train_test_split(X_Data_2d, y_data_squeeze, test_size=0.4, random_state=42)
-clf = svm.SVC(kernel='linear')
+clf = SVC(kernel='linear', C=1)
 clf.fit(X_train,y_train)
 
 #accuracy of the SVM
